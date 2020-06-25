@@ -1,13 +1,27 @@
-let character = 'mario';
-let age = 30;
-let isBlackBelt = false;
+let names = ['luigi', 'mario', 'yoshi'];
 
-character = 'luigi';
+names.push('tody');
 
-isBlackBelt = true;
+let numbers = [10, 20, 30];
 
-const circ = (dia: number) => {
-    return dia * Math.PI;
+numbers.push(35);
+
+let mixed = ['ken', 4, 'banana', true];
+
+mixed.push('minion');
+mixed.push(10);
+
+let ninja = {
+    name: 'bob',
+    belt: 'yellow',
+    age: 100,
 };
 
-console.log(circ(5));
+ninja.age = 50;
+ninja.name = 'Dave';
+
+ninja = {
+    name: 'kevin',
+    belt: 'blue',
+    age: 105,
+};

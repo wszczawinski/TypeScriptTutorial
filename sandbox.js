@@ -1,9 +1,19 @@
-var character = 'mario';
-var age = 30;
-var isBlackBelt = false;
-character = 'luigi';
-isBlackBelt = true;
-var circ = function (dia) {
-    return dia * Math.PI;
+var names = ['luigi', 'mario', 'yoshi'];
+names.push('tody');
+var numbers = [10, 20, 30];
+numbers.push(35);
+var mixed = ['ken', 4, 'banana', true];
+mixed.push('minion');
+mixed.push(10);
+var ninja = {
+    name: 'bob',
+    belt: 'yellow',
+    age: 100
 };
-console.log(circ(5));
+ninja.age = 50;
+ninja.name = 'Dave';
+ninja = {
+    name: 'kevin',
+    belt: 'blue',
+    age: 105
+};
