@@ -1,7 +1,9 @@
 var character = 'mario';
-console.log(character);
-var inputs = document.querySelectorAll('input');
-console.log(inputs);
-inputs.forEach(function (input) {
-    console.log(input);
-});
+var age = 30;
+var isBlackBelt = false;
+character = 'luigi';
+isBlackBelt = true;
+var circ = function (dia) {
+    return dia * Math.PI;
+};
+console.log(circ(5));
