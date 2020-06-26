@@ -1,27 +1,33 @@
-let names = ['luigi', 'mario', 'yoshi'];
+// explicit types
+let character: string;
+let age: number;
 
-names.push('tody');
+character = 'bob';
+age = 30;
 
-let numbers = [10, 20, 30];
+// arrays
+let minions: string[] = []; //creates empty array which enables array methods
+minions.push('dave');
 
-numbers.push(35);
+// union types
+let mixed: (string | number | boolean)[] = [];
+mixed.push('hello');
+mixed.push(20);
+mixed.push(true);
+console.log(mixed);
 
-let mixed = ['ken', 4, 'banana', true];
+let uid: string | number;
+uid = '123';
+uid = 123;
 
-mixed.push('minion');
-mixed.push(10);
+// object
+let minionOne: object;
+minionOne = { name: 'dave', age: 30 };
 
-let ninja = {
-    name: 'bob',
-    belt: 'yellow',
-    age: 100,
+let minionTwo: {
+    name: string;
+    age: number;
+    pants: string;
 };
 
-ninja.age = 50;
-ninja.name = 'Dave';
-
-ninja = {
-    name: 'kevin',
-    belt: 'blue',
-    age: 105,
-};
+minionTwo = { name: 'Bob', age: 20, pants: 'blue' };
