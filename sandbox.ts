@@ -1,33 +1,21 @@
-// explicit types
-let character: string;
-let age: number;
+let age: any = 20;
 
-character = 'bob';
+age = true;
+console.log(age);
+age = 'hello';
+console.log(age);
 age = 30;
+console.log(age);
 
-// arrays
-let minions: string[] = []; //creates empty array which enables array methods
-minions.push('dave');
+let mixed: any[] = [];
 
-// union types
-let mixed: (string | number | boolean)[] = [];
-mixed.push('hello');
-mixed.push(20);
+mixed.push(5);
+mixed.push('Dave');
 mixed.push(true);
+
 console.log(mixed);
 
-let uid: string | number;
-uid = '123';
-uid = 123;
+let minion: { name: any; age: any };
 
-// object
-let minionOne: object;
-minionOne = { name: 'dave', age: 30 };
-
-let minionTwo: {
-    name: string;
-    age: number;
-    pants: string;
-};
-
-minionTwo = { name: 'Bob', age: 20, pants: 'blue' };
+minion = { name: 'Bob', age: 20 };
+console.log(minion);
