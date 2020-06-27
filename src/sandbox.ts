@@ -1,23 +1,18 @@
-let age: any = 20;
+let greet: Function;
 
-age = true;
-console.log(age);
-age = 'hello';
-console.log(age);
-age = 30;
-console.log(age);
+greet = () => {
+    console.log('Banana!');
+};
 
-let mixed: any[] = [];
+const add = (a: number, b: number, c: number | string = 10) => {
+    console.log(a + b);
+    console.log(c);
+};
 
-mixed.push(5);
-mixed.push('Dave');
-mixed.push(true);
+add(5, 10, '20');
 
-console.log(mixed);
+const minus = (a: number, b: number): number => {
+    return a + b;
+};
 
-let minion: { name: any; age: any };
-
-minion = { name: 'Bob', age: 20 };
-console.log(minion);
-
-console.log('Configured!!')
+let result = minus(10, 7);

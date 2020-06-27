@@ -1,17 +1,15 @@
 "use strict";
-var age = 20;
-age = true;
-console.log(age);
-age = 'hello';
-console.log(age);
-age = 30;
-console.log(age);
-var mixed = [];
-mixed.push(5);
-mixed.push('Dave');
-mixed.push(true);
-console.log(mixed);
-var minion;
-minion = { name: 'Bob', age: 20 };
-console.log(minion);
-console.log('Configured!!');
+var greet;
+greet = function () {
+    console.log('Banana!');
+};
+var add = function (a, b, c) {
+    if (c === void 0) { c = 10; }
+    console.log(a + b);
+    console.log(c);
+};
+add(5, 10, '20');
+var minus = function (a, b) {
+    return a + b;
+};
+var result = minus(10, 7);
