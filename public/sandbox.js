@@ -1,10 +1,22 @@
 "use strict";
-var logDetails = function (uid, item) {
-    console.log(item + " has a uid of " + uid);
+// let greet: Function;
+// 1
+var greet;
+greet = function (name, greeting) {
+    console.log(name + " says " + greeting);
 };
-var greet = function (user) {
-    console.log(user.name + " say hello");
+// 2
+var calc;
+calc = function (numOne, numTwo, action) {
+    if (action === 'add') {
+        return numOne + numTwo;
+    }
+    else {
+        return numOne - numTwo;
+    }
 };
-var greet2 = function (user) {
-    console.log(user.name + " say hello");
+// 3
+var logDetails;
+logDetails = function (minion) {
+    console.log(minion.name + " is " + minion.age + " years old");
 };
