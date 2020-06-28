@@ -1,3 +1,34 @@
+class Invoice {
+    client: string;
+    details: string;
+    amount: number;
+
+    constructor(c: string, d: string, a: number) {
+        this.client = c;
+        this.details = d;
+        this.amount = a;
+    }
+
+    format() {
+        return `${this.client} owes ${this.amount} for ${this.details}`;
+    }
+}
+
+const invOne = new Invoice('Bob', 'Glasses', 50);
+const invTwo = new Invoice('John', 'Glasses', 30);
+
+let invoices: Invoice[] = [];
+invoices.push(invOne);
+invoices.push(invTwo);
+
+console.log(invoices);
+
+invOne.client = 'Dave';
+
+console.log(invoices);
+
+
+
 const anchor = document.querySelector('a')!;
 //if developer is sure that there is some anchor tag in html file
 //can add '!' which will stap tsc from showing an error
