@@ -1,9 +1,12 @@
 "use strict";
 var Invoice = /** @class */ (function () {
-    function Invoice(c, d, a) {
-        this.client = c;
-        this.details = d;
-        this.amount = a;
+    // readonly client: string;
+    // private details: string;
+    // public amount: number;
+    function Invoice(client, details, amount) {
+        this.client = client;
+        this.details = details;
+        this.amount = amount;
     }
     Invoice.prototype.format = function () {
         return this.client + " owes " + this.amount + " for " + this.details;
@@ -15,9 +18,9 @@ var invTwo = new Invoice('John', 'Glasses', 30);
 var invoices = [];
 invoices.push(invOne);
 invoices.push(invTwo);
-console.log(invoices);
-invOne.client = 'Dave';
-console.log(invoices);
+invoices.forEach(function (inv) {
+    console.log(inv.client, inv.amount, inv.format());
+});
 var anchor = document.querySelector('a');
 //if developer is sure that there is some anchor tag in html file
 //can add '!' which will stap tsc from showing an error
