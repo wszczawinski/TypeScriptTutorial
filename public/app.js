@@ -21,3 +21,27 @@ form.addEventListener('submit', (e) => {
     }
     list.render(doc, type.value, 'end');
 });
+//Generics  -  allows to create reusable blocks of code
+const addUID = (obj) => {
+    //'T' captures properties of the thing that was pass in (object in this case)
+    //this enable to capture a specific of the type of 'thing'
+    let uid = Math.floor(Math.random() * 100);
+    return Object.assign(Object.assign({}, obj), { uid });
+};
+let docOne = addUID({ name: 'Dave', age: 100 });
+console.log(docOne, docOne.name);
+const docThree = {
+    uid: 1,
+    resourceName: 'person',
+    data: 'banana',
+};
+const docFour = {
+    uid: 1,
+    resourceName: 'person',
+    data: { name: 'banana' },
+};
+const docFive = {
+    uid: 1,
+    resourceName: 'shopping list',
+    data: ['eggs', 'milk'],
+};
