@@ -28,41 +28,32 @@ form.addEventListener('submit', (e: Event) => {
     list.render(doc, type.value, 'end');
 });
 
-//Generics  -  allows to create reusable blocks of code
+//Enums
+enum ResourceType {
+    BOOK,
+    AUTHOR,
+    FILM,
+    DIRECTOR,
+    PERSON,
+}
 
-const addUID = <T extends object>(obj: T) => {
-    //'T' captures properties of the thing that was pass in (object in this case)
-    //this enable to capture a specific of the type of 'thing'
-    let uid = Math.floor(Math.random() * 100);
-    return { ...obj, uid };
-};
-
-let docOne = addUID({ name: 'Dave', age: 100 });
-
-console.log(docOne, docOne.name);
-
-//with interfaces
 interface Resource<T> {
     //'T' allows to assing type for 'data' based on the type of variable which will be pass in
     uid: number;
-    resourceName: string;
+    resourceType: ResourceType;
     data: T;
 }
 
-const docThree: Resource<string> = {
+const docTwo: Resource<string> = {
     uid: 1,
-    resourceName: 'person',
+    resourceType: ResourceType.BOOK,
     data: 'banana',
 };
 
-const docFour: Resource<object> = {
+const docThree: Resource<object> = {
     uid: 1,
-    resourceName: 'person',
+    resourceType: ResourceType.DIRECTOR,
     data: { name: 'banana' },
 };
 
-const docFive: Resource<string[]> = {
-    uid: 1,
-    resourceName: 'shopping list',
-    data: ['eggs', 'milk'],
-};
+console.log(docTwo, docThree);
