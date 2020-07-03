@@ -18,42 +18,29 @@ const list = new ListTemplate(ul);
 form.addEventListener('submit', (e: Event) => {
     e.preventDefault();
 
+    let values: [string, string, number];
+    values = [tofrom.value, details.value, amount.valueAsNumber];
+
     let doc: HasFormatter;
     if (type.value === 'invoice') {
-        doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+        doc = new Invoice(...values);
     } else {
-        doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+        doc = new Payment(...values);
     }
 
     list.render(doc, type.value, 'end');
 });
 
-//Enums
-enum ResourceType {
-    BOOK,
-    AUTHOR,
-    FILM,
-    DIRECTOR,
-    PERSON,
-}
+// Tuples - specific type of variable on each position
 
-interface Resource<T> {
-    //'T' allows to assing type for 'data' based on the type of variable which will be pass in
-    uid: number;
-    resourceType: ResourceType;
-    data: T;
-}
+let arr = ['dave', 25, true];
+arr[0] = false;
+arr[1] = 'bob';
+arr = [30, 'bob'];
 
-const docTwo: Resource<string> = {
-    uid: 1,
-    resourceType: ResourceType.BOOK,
-    data: 'banana',
-};
+let tup: [string, number, boolean] = ['bob', 30, true];
+tup[0] = 'hello';
+tup[1] = 1;
 
-const docThree: Resource<object> = {
-    uid: 1,
-    resourceType: ResourceType.DIRECTOR,
-    data: { name: 'banana' },
-};
-
-console.log(docTwo, docThree);
+let student: [string, number];
+student = ['chun-li', 2322];
